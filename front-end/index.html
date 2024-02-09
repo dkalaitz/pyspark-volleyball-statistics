@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VolleyScore</title>
+    <link rel="stylesheet" href="index.css" />
+    <script
+      src="https://kit.fontawesome.com/cd1f57a1dd.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="index.js" defer></script>
+  </head>
+  <body>
+    <div id="banner">
+      <h2 id="banner-header">VolleyScore</h2>
+    </div>
+
+    <div id="container-game">
+      <div id="scoreboard">
+        <span id="teamA" class="team">
+          Team A<br />
+          <span id="teamASets" class="sets">Sets: 0</span>
+        </span>
+        <span id="score">0 - 0</span>
+        <span id="teamB" class="team">
+          Team B<br />
+          <span id="teamBSets" class="sets">Sets: 0</span>
+        </span>
+      </div>
+      <span id="currentServing">Serving: -</span>
+      <div id="timeout-timer">
+        <p id="timeoutLabel"></p>
+        <p id="timeoutTimer"></p>
+      </div>
+    </div>
+
+    <div id="bottom-container">
+      <span id="winner">Winner :</span>
+      <button id="buttonScoreA" class="button" onclick="addPoint('A')">
+        Team A Scores
+      </button>
+      <button id="buttonScoreB" class="button" onclick="addPoint('B')">
+        Team B Scores
+      </button>
+      <br />
+      <button id="buttonResetGame" class="button" onclick="resetGame()">
+        Reset
+      </button>
+      <button id="buttonTimeout" class="button" onclick="activateTimeout()">
+        <i class="fa-solid fa-clock"></i>
+        Call Timeout
+      </button>
+      <button id="buttonDownload" class="button" onclick="downloadStatistics()">
+        Download Statistics
+        <br />
+        <i class="fa-solid fa-download"></i>
+      </button>
+    </div>
+  </body>
+</html>
