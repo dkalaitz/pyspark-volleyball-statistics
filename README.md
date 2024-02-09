@@ -19,12 +19,12 @@ percentage_cols = ['T1_Srv_Eff', 'T1_Rec_Pos', 'T1_Rec_Perf', 'T1_Att_Kill_Perc'
 
 ### Task 2: create a table of statistics (data_team_statistics.py)
 
-Create a table of statistics for all the groups shown in the csv file. This table must include, for each of the groups:
+Create a table of statistics for all the teams shown in the csv file. This table include, for each of the teams:
 
-The matches (home, away and total) that the team has played.
-The total sets lost and won by each team.
-The total points lost and won by each team.
-These statistics shall be sorted in descending order of total matches won for each team.
+- The matches (home, away and total) that the team has played.
+- The total sets lost and won by each team.
+- The total points lost and won by each team.
+- These statistics is sorted in descending order of total matches won for each team.
 
 ### Task 3: Using the Apache Spark Structured Streaming API (data_streaming.py)
 
