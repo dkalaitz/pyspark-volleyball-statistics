@@ -87,9 +87,9 @@ spark-submit
 localhost 9999
 - Download statistics from front-end
 
-**NOTE**: 
+### **NOTE**: 
 1. Absolute paths are used
-2. Project was run in Linux
+2. Project was run on Linux
 
 # Volleyball Scoring Application
 
