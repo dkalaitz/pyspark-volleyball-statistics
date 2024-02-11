@@ -31,7 +31,7 @@ Create a table of statistics for all the teams shown in the csv file. This table
 For the data to be saved from the web application, using Apache Spark Structured Streaming, place the resulting csv file from the web application in an appropriate folder, update the statistics table of Task 2 with this mechanism, and save the new statistics table in a csv file.
 
 # CSV Files Instructions
-### The csv file use as input the following fields (with corresponding T1 and T2 for the home and away team).
+### The CSV file use as input the following fields (with corresponding T1 and T2 for the home and away team).
 - Date - Date and time the match was played
 - Team_1 & Team_2 - Name of the teams
 - Score - Number of sets won
@@ -91,10 +91,42 @@ localhost 9999
 1. Absolute paths are used
 2. Project was run in Linux
 
-Certainly! Here's the revised description:
-
----
-
 # Volleyball Scoring Application
 
 This application enables users to score volleyball matches between two teams. Users can input team names, track scores, sets, serving team, and activate timeouts. The timeout feature is triggered automatically when the leading team reaches 8 or 16 points. The application provides real-time updates on the scoreboard and enables users to download match statistics in CSV format.
+
+
+# Data Streaming Example:
+
+1. Start HDFS
+   
+   ![Start HDFS](https://private-user-images.githubusercontent.com/104946109/303934142-6ef9bef0-1642-4a75-b550-de47bdc4dc8f.jpg?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MDc2NzA5ODksIm5iZiI6MTcwNzY3MDY4OSwicGF0aCI6Ii8xMDQ5NDYxMDkvMzAzOTM0MTQyLTZlZjliZWYwLTE2NDItNGE3NS1iNTUwLWRlNDdiZGM0ZGM4Zi5qcGc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjQwMjExJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI0MDIxMVQxNjU4MDlaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT0yZGE4NjE3NmY2NTY0ZjIxNTNmOWRlYjUxZGU0YjhmMzNkZDUwOTBkMmM3NTI4ZDk0MjIyZmI2Y2I0ODk3NGY3JlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZhY3Rvcl9pZD0wJmtleV9pZD0wJnJlcG9faWQ9MCJ9.mtuLCwALdHkxCjZPCakl_sZ2EZRhZZKEu3lKkjtyvw8)
+2. Start Server
+   
+   ![Start Server](https://private-user-images.githubusercontent.com/104946109/303934136-36aa12d8-283d-4c3c-8f95-0a959bdb76d1.jpg?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MDc2NzA5ODksIm5iZiI6MTcwNzY3MDY4OSwicGF0aCI6Ii8xMDQ5NDYxMDkvMzAzOTM0MTM2LTM2YWExMmQ4LTI4M2QtNGMzYy04Zjk1LTBhOTU5YmRiNzZkMS5qcGc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjQwMjExJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI0MDIxMVQxNjU4MDlaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT00YjA2NTBlZTU5YjY5ZGRjNGE4NDczNjdhOTU3MGRlNWE5ZjA0Y2MyYzdhMzI4NWYyODA3M2FiNDRlYTgwNmUxJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZhY3Rvcl9pZD0wJmtleV9pZD0wJnJlcG9faWQ9MCJ9.M0FSS6l7azXcA6Lv9l4c7LJBW1wJaiTmBPjLB_SANs4)
+3. Submit Python Script
+   
+   ![python script](https://private-user-images.githubusercontent.com/104946109/303934139-f84a343a-6d80-49a6-8a8e-ec1292a901d4.jpg?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MDc2NzA5ODksIm5iZiI6MTcwNzY3MDY4OSwicGF0aCI6Ii8xMDQ5NDYxMDkvMzAzOTM0MTM5LWY4NGEzNDNhLTZkODAtNDlhNi04YThlLWVjMTI5MmE5MDFkNC5qcGc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjQwMjExJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI0MDIxMVQxNjU4MDlaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT1mY2IyOTk4MTk1ZjdlNGE2ZmFhZjdmZjc0ZmExOTVkNWEyYmY1NTlmNTcyYzk3NjAzZDIzYzI0OTdmNzUyN2NlJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZhY3Rvcl9pZD0wJmtleV9pZD0wJnJlcG9faWQ9MCJ9.El0I_5fcnu5X7xCiSZGo2I-uohYMfWxKreD4P0yVxKY)
+4. Download Statistics from Front-End
+   
+   The first downloaded file include a CSV with the below fields:
+   - HomeTeam: ZAKSA Kędzierzyn-Koźle
+   - AwayTeam: PGE Skra Bełchatów
+   - HomeSets: 3
+   - AwaySets: 1
+   - HomePoints: 80
+   - AwayPoints: 56
+     
+   Waiting for a while and the updated table will show:
+   
+   ![first_download](https://private-user-images.githubusercontent.com/104946109/303934140-b1a6c250-da7b-4007-b7b6-c9063cb5ff7c.jpg?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MDc2NzA5ODksIm5iZiI6MTcwNzY3MDY4OSwicGF0aCI6Ii8xMDQ5NDYxMDkvMzAzOTM0MTQwLWIxYTZjMjUwLWRhN2ItNDAwNy1iN2I2LWM5MDYzY2I1ZmY3Yy5qcGc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjQwMjExJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI0MDIxMVQxNjU4MDlaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT1kMjU1NTI5OThmNTQ0NTkzNTc1YWUwYjdlNGQyMmRiYTgzYTQ4MDFiYmZkNjg0OTMyOTg0ZTlmNjhiNzgzMjQ1JlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZhY3Rvcl9pZD0wJmtleV9pZD0wJnJlcG9faWQ9MCJ9.KNX2142zhj9x6I2sdEW1WVKXNLkDzK_axKYHMoiquBU)
+6. Download Second Game Statistics from Front-End
+    
+   - HomeTeam: Asseco Resovia
+   - AwayTeam: Jastrzębski Węgiel
+   - HomeSets: 3
+   - AwaySets: 2
+   - HomePoints: 87
+   - AwayPoints: 78
+     
+   ![second_download](https://private-user-images.githubusercontent.com/104946109/303934141-411a6355-beb8-4a5a-9ec7-e97bda8b3c9d.jpg?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MDc2NzA5ODksIm5iZiI6MTcwNzY3MDY4OSwicGF0aCI6Ii8xMDQ5NDYxMDkvMzAzOTM0MTQxLTQxMWE2MzU1LWJlYjgtNGE1YS05ZWM3LWU5N2JkYThiM2M5ZC5qcGc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjQwMjExJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI0MDIxMVQxNjU4MDlaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT0xNGNmYWJjYzdjNjI3MGViMGFlZjE4ZjFjN2MyNzM5MDBhYTM3NWZlYmQyNTU2NzVmYmNlOGUxZTg1ZjY2YjlkJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZhY3Rvcl9pZD0wJmtleV9pZD0wJnJlcG9faWQ9MCJ9.1lo5KFoOCK7Qioodow_Nvcb7UhSnOykBbDvjeL-DxB4)
